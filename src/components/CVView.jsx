@@ -37,28 +37,34 @@ const CVView = ({ data, theme }) => {
           }
         />
         
-        <Section 
-          title="Experience" 
-          theme={theme}
-          content={
-            <div className="experience-list">
-              {data.experience.map((job, index) => (
-                <div key={index} className="experience-item">
-                  <div className="experience-header">
-                    <h3>{job.title}</h3>
-                    <span className="company">{job.company}</span>
-                    <span className="period">{job.period}</span>
+        {/* Added spacing div between Skills and Experience */}
+        <div className="section-spacer"></div>
+        
+        {/* Experience section with page-break-inside: avoid */}
+        <div className="experience-section-wrapper">
+          <Section 
+            title="Experience" 
+            theme={theme}
+            content={
+              <div className="experience-list">
+                {data.experience.map((job, index) => (
+                  <div key={index} className="experience-item">
+                    <div className="experience-header">
+                      <h3>{job.title}</h3>
+                      <span className="company">{job.company}</span>
+                      <span className="period">{job.period}</span>
+                    </div>
+                    <ul className="responsibilities">
+                      {job.responsibilities.map((resp, idx) => (
+                        <li key={idx}>{resp}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="responsibilities">
-                    {job.responsibilities.map((resp, idx) => (
-                      <li key={idx}>{resp}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          }
-        />
+                ))}
+              </div>
+            }
+          />
+        </div>
         
         <Section 
           title="Education" 

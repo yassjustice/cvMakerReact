@@ -222,3 +222,54 @@
       columns: 1;
     }
   }
+
+  /* Add this to your CVView.css file */
+
+/* Add space between Skills and Experience sections */
+.section-spacer {
+  height: 120px; /* Adjust this value to control the amount of space */
+  width: 100%;
+}
+
+/* Keep Experience title with its content */
+.experience-section-wrapper {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Additional styling for PDF export */
+@media print {
+  /* Prevent page breaks inside job items */
+  .experience-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* You can also add this to other sections you want to keep together */
+  .education-item, 
+  .additional-exp-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Additional spacing control for PDF export */
+  .section-spacer {
+    height: 20px; /* You can adjust this specifically for print */
+  }
+  
+  /* Ensure section titles stay with their content */
+  .cv-section {
+    page-break-inside: avoid;
+    break-inside: avoid-start;
+  }
+}
+
+/* For the Word document export, update the Section component's margin */
+.cv-section {
+  margin-bottom: 20px; /* Base spacing between all sections */
+}
+
+/* Add specific spacing for Skills section */
+.cv-section[data-title="Skills"] {
+  margin-bottom: 40px; /* Extra space after Skills section */
+}
