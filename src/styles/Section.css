@@ -1,0 +1,46 @@
+.cv-section {
+    margin-bottom: 25px;
+  }
+  
+  .section-title {
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  /* Theme variations */
+  .cv-section.professional .section-title {
+    border-bottom: 1px solid #2c3e50;
+    color: #2c3e50;
+  }
+  
+  .cv-section.modern .section-title {
+    color: #3498db;
+  }
+  
+  .cv-section.modern .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+  }
+  
+  .cv-section.minimal .section-title {
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 500;
+  }
+  
+  .section-content {
+    line-height: 1.5;
+  }
+  
+  /* Print styles */
+  @media print {
+    .cv-section {
+      page-break-inside: avoid;
+    }
+  }

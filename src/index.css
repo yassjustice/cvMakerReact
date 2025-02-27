@@ -1,0 +1,54 @@
+:root {
+  --font-sans: 'Open Sans', 'Roboto', 'Arial', sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --color-primary: #3498db;
+  --color-secondary: #2c3e50;
+  --color-success: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #3498db;
+  --color-light: #f5f5f5;
+  --color-dark: #333333;
+  --color-gray: #777777;
+  --color-border: #e0e0e0;
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #f9f9f9;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+/* Print styles for PDF/Word export */
+@media print {
+  body {
+    background-color: white;
+  }
+  
+  .app-header, 
+  .app-footer {
+    display: none !important;
+  }
+  
+  .cv-container {
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+  
+  .cv-view {
+    padding: 0 !important;
+  }
+}
